@@ -112,34 +112,16 @@
     </section>
 
     <section id="audio-section">
-        <h2>Listen to Our Sounds</h2>
-        <p>Upload your WAV file below and listen to it.</p>
-        <input type="file" id="audioFile" accept=".wav">
-        <audio controls id="audioPlayer">
-            Your browser does not support the audio element.
-        </audio>
-    </section>
+    <h2>Listen to Our Sounds</h2>
+    <audio controls>
+        <source src="https://drive.google.com/uc?export=download&id=1qp6hF-Wd5FpfRUhaddbBIkuir9MWkvyf" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+</section>
 
     <footer>
         <p>&copy; 2024 Your Personal Merchandise Store</p>
     </footer>
-
-    <script>
-        // JavaScript to handle file selection and audio playback
-        const audioFileInput = document.getElementById('audioFile');
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        audioFileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    audioPlayer.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 
 </body>
 </html>
