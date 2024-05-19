@@ -114,7 +114,7 @@
     <section id="audio-section">
     <h2>Listen to Our Sounds</h2>
     <audio controls>
-        <source src="https://drive.google.com/uc?id=1qp6hF-Wd5FpfRUhaddbBIkuir9MWkvyf&export=download" type="audio/wav"> 
+        <source src="https://drive.google.com/uc?id=1qp6hF-Wd5FpfRUhaddbBIkuir9MWkvyf&export=download" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
 </section>
