@@ -3,73 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Personal Brand</title>
+    <title>Personal Merchandise Store</title>
     <style>
+        /* Your existing CSS styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-            color: white;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: red;
+            background-color: #333;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
         }
         nav {
-            background-color: gray;
+            background-color: #666;
             padding: 10px 0;
             text-align: center;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
+        nav a {
+            color: #fff;
             text-decoration: none;
-            color: white;
+            padding: 0 15px;
+            font-size: 1.2em;
         }
         section {
             padding: 20px;
+            margin-bottom: 40px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
         }
         footer {
-            background-color: gray;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        /* New styles for audio section */
+        #audio-section {
+            text-align: center;
+        }
+        audio {
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>PERDIEU</h1>
+        <h1>Personal Merchandise Store</h1>
+        <p>Welcome to our professional merchandise store</p>
     </header>
+
     <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <section>
-        <h2>Welcome to Your Personal Brand</h2>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="audioFile">Upload Your WAV File:</label><br>
-            <input type="file" id="audioFile" name="audioFile"><br>
-            <input type="submit" value="Upload">
-        </form>
+
+    <section id="home">
+        <h2>About Us</h2>
+        <p>Welcome to our merchandise store! We offer a wide range of high-quality products designed to meet your needs. Browse through our collection and find something that suits your style.</p>
     </section>
+
+    <section id="shop">
+        <h2>Our Products</h2>
+        <div class="product">
+            <img src="your_image1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1 goes here.</p>
+            <p>$XX.XX</p>
+        </div>
+
+        <div class="product">
+            <img src="your_image2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2 goes here.</p>
+            <p>$XX.XX</p>
+        </div>
+
+        <!-- Add more products as needed -->
+
+    </section>
+
+    <section id="audio-section">
+        <h2>Listen to Our Sounds</h2>
+        <p>Upload your WAV file below and listen to it.</p>
+        <input type="file" id="audioFile" accept=".wav">
+        <audio controls id="audioPlayer">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Your Personal Brand. All rights reserved.</p>
+        <p>&copy; 2024 Your Personal Merchandise Store</p>
     </footer>
+
+    <script>
+        // JavaScript to handle file selection and audio playback
+        const audioFileInput = document.getElementById('audioFile');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        audioFileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    audioPlayer.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
 </body>
 </html>
